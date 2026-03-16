@@ -1,0 +1,6 @@
+region = "ap-south-1"
+instance_type = "t2.micro"
+ami_id = "ami-0a14f53a6fe4dfcd1"
+vpc_id = "vpc-0d11f348a915c0a16"
+subnet_id = "subnet-0e0c4d6879b83a2ce"
+public_key = "~/.ssh/id_ed25519.pub"
