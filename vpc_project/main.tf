@@ -3,7 +3,6 @@ provider "aws" {
   region = "ap-south-1"
 
 }
-
 resource "aws_vpc" "demo_vpc" {
   cidr_block = var.VPC_CIDR
   tags = {
@@ -11,7 +10,6 @@ resource "aws_vpc" "demo_vpc" {
   }
 
 }
-
 resource "aws_subnet" "public_subnet" {
   vpc_id     = aws_vpc.demo_vpc.id
   cidr_block = var.PUBLIC_SUBNET_CIDR
@@ -28,14 +26,12 @@ resource "aws_subnet" "private_subnet" {
   }
 
 }
-
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.demo_vpc.id
   tags = {
     Name = "Demo_IG"
   }
 }
-
 resource "aws_route_table" "public_rt" {
   vpc_id = aws_vpc.demo_vpc.id
   tags = {
